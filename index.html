@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proman 2.0 | 45+ Years of Shaping Pharma Success</title>
+    <meta name="description" content="Proman helps brand managers and PMT teams turn strategy decks into usable promotional assets faster. 45+ years shaping pharma brand strategy with BITS Pilani & IIM Ahmedabad expertise.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Proman 2.0 | Shaping Pharma Success Since 1980">
+    <meta property="og:description" content="Brand Story • PMT Alignment • Assets that Convert. Trusted by leading pharma organizations.">
+    <meta property="og:url" content="https://www.promankur.com/">
+    <meta property="og:image" content="https://www.promankur.com/assets/proman_logo.png">
+    <link rel="icon" type="image/png" href="assets/proman_logo.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #0A0A0A;
+            --bg-secondary: #141414;
+            --bg-card: rgba(26, 26, 26, 0.7);
+            --bg-card-hover: rgba(36, 36, 36, 0.9);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --border-highlight: rgba(26, 106, 255, 0.4);
+            --accent-blue: #1A6AFF;
+            --accent-blue-hover: #0D56E0;
+            --text-primary: #FFFFFF;
+            --text-secondary: #A0A0A0;
+            --text-muted: #6E6E6E;
+            --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Ambient Glow & Layout */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header / Navbar */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            background: rgba(10, 10, 10, 0.85);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .brand-logo img {
+            width: 44px;
+            height: 44px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .brand-text h1 {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .brand-text span {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            display: block;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .social-link {
+            color: var(--text-secondary);
+            font-size: 13px;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .social-link:hover {
+            color: var(--accent-blue);
+        }
+
+        .btn-cta {
+            background: var(--accent-blue);
+            color: #FFFFFF;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 13px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 14px rgba(26, 106, 255, 0.35);
+        }
+
+        .btn-cta:hover {
+            background: var(--accent-blue-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(26, 106, 255, 0.5);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 100px 0 80px;
+            background: radial-gradient(circle at 50% 20%, rgba(26, 106, 255, 0.12) 0%, rgba(10, 10, 10, 0) 70%);
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent-blue);
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero h2 {
+            font-family: var(--font-heading);
+            font-size: 54px;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+        }
+
+        .hero-tagline {
+            font-size: 18px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 28px;
+        }
+
+        .hero-bullets {
+            list-style: none;
+            margin-bottom: 36px;
+        }
+
+        .hero-bullets li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 16px;
+            color: #D1D1D1;
+            margin-bottom: 12px;
+        }
+
+        .hero-bullets li::before {
+            content: "•";
+            color: var(--accent-blue);
+            font-size: 24px;
+            line-height: 1;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 13px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-visual {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-visual img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 90px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 56px;
+        }
+
+        .section-header h3 {
+            font-family: var(--font-heading);
+            font-size: 38px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 14px;
+        }
+
+        .section-header p {
+            font-size: 17px;
+            color: var(--text-secondary);
+        }
+
+        /* Pillars Cards */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 36px 28px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-highlight);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-tag {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-blue);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .card h4 {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* Methodology / Complexity to Clarity */
+        .two-col-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: center;
+        }
+
+        .col-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 18px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+        }
+
+        .steps-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .step-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 22px 24px;
+            transition: border-color 0.2s ease;
+        }
+
+        .step-item:hover {
+            border-color: var(--border-highlight);
+        }
+
+        .step-title {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 700;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .step-title span {
+            color: var(--accent-blue);
+        }
+
+        .step-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Clients & Alliances Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .benefit-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 22px;
+        }
+
+        .benefit-title {
+            font-family: var(--font-heading);
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #FFFFFF;
+        }
+
+        .benefit-desc {
+            font-size: 13.5px;
+            color: var(--text-secondary);
+        }
+
+        /* Founder Section */
+        .founder-wrapper {
+            background: linear-gradient(135deg, rgba(20, 20, 20, 0.8) 0%, rgba(10, 10, 10, 0.95) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 56px;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 52px;
+            align-items: center;
+        }
+
+        .founder-avatar {
+            text-align: center;
+        }
+
+        .founder-avatar img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(26, 106, 255, 0.4);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.7);
+            margin-bottom: 18px;
+        }
+
+        .founder-name {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .founder-title {
+            font-size: 13px;
+            color: var(--accent-blue);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .founder-details {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .founder-row {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 14px;
+            font-size: 15px;
+        }
+
+        .founder-label {
+            font-weight: 700;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .founder-val {
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Contact / CTA Banner */
+        .cta-banner {
+            text-align: center;
+            background: radial-gradient(circle at 50% 50%, rgba(26, 106, 255, 0.15) 0%, rgba(10, 10, 10, 0) 80%);
+            padding: 80px 24px;
+            border-radius: 28px;
+            border: 1px solid var(--border-highlight);
+        }
+
+        .cta-banner h3 {
+            font-family: var(--font-heading);
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 14px;
+            letter-spacing: -0.5px;
+        }
+
+        .cta-banner p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 36px;
+        }
+
+        .contact-info-pills {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 36px;
+        }
+
+        .contact-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .contact-pill:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent-blue);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 44px 0;
+            background: #080808;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .footer-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .hero-grid, .two-col-layout, .founder-wrapper {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h2 {
+                font-size: 40px;
+            }
+            nav ul {
+                display: none; /* Mobile menu fallback */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            .founder-row {
+                grid-template-columns: 1fr;
+                gap: 4px;
+            }
+            .founder-wrapper {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="/" class="brand-logo">
+                <img src="assets/proman_logo.png" alt="Proman 2.0 Logo">
+                <div class="brand-text">
+                    <h1>Proman</h1>
+                    <span>Trusted by Pharma since 1980</span>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#strategy">Strategy & PMT</a></li>
+                    <li><a href="#methodology">Approach</a></li>
+                    <li><a href="#clients">Clients & Alliances</a></li>
+                    <li><a href="#founder">Our Founder</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="https://www.facebook.com/profile.php?id=61583331310254" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook">FB</a>
+                <a href="https://x.com/promankur" target="_blank" rel="noopener noreferrer" class="social-link" title="X / Twitter">X</a>
+                <a href="https://www.linkedin.com/company/109982861" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">IN</a>
+                <a href="tel:+919324726587" class="btn-cta">Call Us Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge">PHARMA STRATEGY &amp; PMT EXCELLENCE</div>
+                <h2>45+ Years of Shaping Pharma Success</h2>
+                <div class="hero-tagline">• Brand Story • PMT Alignment • Assets that Convert</div>
+                <ul class="hero-bullets">
+                    <li>Positioning doctors understand and remember</li>
+                    <li>PMT support drives confident field execution</li>
+                    <li>Promotional assets produce measurable conversions</li>
+                </ul>
+                <div class="hero-actions">
+                    <a href="tel:+919324726587" class="btn-cta">Call Us Now</a>
+                    <a href="#strategy" class="btn-secondary">Explore Strategy</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <img src="assets/hero_bg.webp" alt="Proman 2.0 Pharma Strategy Banner">
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategy meets PMT Execution -->
+    <section id="strategy">
+        <div class="container">
+            <div class="section-header">
+                <h3>Strategy Meets PMT Execution</h3>
+                <p>Proman helps brand managers and PMT teams turn strategy decks into usable promotional assets — faster.</p>
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-tag">Pillar 01</div>
+                    <h4>Clarity &rarr;</h4>
+                    <p>A core strategic story for all teams. We cut through medical clutter to identify the singular, memorable message that anchors your brand.</p>
+                </div>
+                <div class="card">
+                    <div class="card-tag">Pillar 02</div>
+                    <h4>Alignment &rarr;</h4>
+                    <p>Simple workflows to connect managers to field. Eliminate disconnects between head-office strategy decks and frontline doctor conversations.</p>
+                </div>
+                <div class="card">
+                    <div class="card-tag">Pillar 03</div>
+                    <h4>Speed &rarr;</h4>
+                    <p>Usable, effective promotional assets, faster. Streamlined asset production that accelerates campaign rollouts without sacrificing precision.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transform Complexity into Clarity -->
+    <section id="methodology">
+        <div class="container two-col-layout">
+            <div class="col-image">
+                <img src="assets/chaos_to_precision.jpg" alt="PALLP Chaos to Precision Architecture">
+            </div>
+            <div class="col-content">
+                <div class="hero-badge">PROVEN VALUE ARCHITECTURE</div>
+                <h3 style="font-family: var(--font-heading); font-size: 34px; margin-bottom: 16px;">Transform Complexity into Clarity</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 28px;">We untangle chaotic strategy pipelines into high-converting promotional tools using our three-stage discipline:</p>
+                
+                <div class="steps-list">
+                    <div class="step-item">
+                        <div class="step-title">Diagnose <span>&rarr;</span></div>
+                        <div class="step-desc">Identify positioning and message gaps across your brand portfolio and competitor landscape.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-title">Design <span>&rarr;</span></div>
+                        <div class="step-desc">Build unified narrative frameworks and modular promotional asset architecture.</div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-title">Deliver <span>&rarr;</span></div>
+                        <div class="step-desc">PMT-ready promotional assets that drive field adoption, doctor recall, and measurable conversions.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients & Alliances -->
+    <section id="clients">
+        <div class="container two-col-layout">
+            <div class="col-content">
+                <div class="hero-badge">PARTNERSHIPS THAT DELIVER</div>
+                <h3 style="font-family: var(--font-heading); font-size: 34px; margin-bottom: 16px;">Clients &amp; Alliances</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 28px;">We work with growth-focused brands, pharmaceutical founders, and marketing leaders who demand rigor and results.</p>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-title">Alignment &rarr;</div>
+                        <div class="benefit-desc">Unified narrative across PMT, brand, and corporate leadership.</div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-title">Sharper Messaging &rarr;</div>
+                        <div class="benefit-desc">Assets that cut through clutter and dramatically improve doctor recall.</div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-title">Campaign Ready &rarr;</div>
+                        <div class="benefit-desc">Faster approvals, fewer revision cycles, and smoother national rollouts.</div>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-title">Clarity for PMT &rarr;</div>
+                        <div class="benefit-desc">Assets that field reps understand instantly and actually use in the clinic.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-image">
+                <img src="assets/clients_alliances.png" alt="PALLP Clients & Alliances Network">
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section id="founder">
+        <div class="container">
+            <div class="founder-wrapper">
+                <div class="founder-avatar">
+                    <img src="assets/ankur_profile.jpg" alt="Ankur Gupta - Founder of Proman">
+                    <div class="founder-name">Ankur Gupta</div>
+                    <div class="founder-title">Founder &amp; Managing Partner</div>
+                </div>
+                <div class="founder-details">
+                    <div class="hero-badge" style="margin-bottom: 8px;">STRATEGY &amp; EXPERTISE</div>
+                    <h3 style="font-family: var(--font-heading); font-size: 28px; margin-bottom: 16px;">Skills that Drive Execution</h3>
+                    
+                    <div class="founder-row">
+                        <div class="founder-label">Experience &rarr;</div>
+                        <div class="founder-val">45+ years shaping pharma brand strategy, PMT capability, and assets that convert.</div>
+                    </div>
+                    <div class="founder-row">
+                        <div class="founder-label">Credentials &rarr;</div>
+                        <div class="founder-val">Pharmacy (BITS Pilani) &amp; Management (IIM Ahmedabad).</div>
+                    </div>
+                    <div class="founder-row">
+                        <div class="founder-label">Philosophy &rarr;</div>
+                        <div class="founder-val">Promotional materials must drive outcomes, not just decorate conference rooms.</div>
+                    </div>
+                    <div class="founder-row">
+                        <div class="founder-label">Track Record &rarr;</div>
+                        <div class="founder-val">1000+ projects delivered. Trusted by leading pharma organizations for clarity, speed, and execution.</div>
+                    </div>
+                    <div class="founder-row">
+                        <div class="founder-label">Beyond Pharma &rarr;</div>
+                        <div class="founder-val">Ankur explores design, strategy, and creative ventures on his personal site.</div>
+                    </div>
+
+                    <div style="margin-top: 14px;">
+                        <a href="/coming" class="btn-secondary">Explore Ankur &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Banner -->
+    <section id="contact">
+        <div class="container">
+            <div class="cta-banner">
+                <div class="hero-badge">LET'S CONNECT</div>
+                <h3>Your Next PMT Win Starts Here</h3>
+                <p>Every success story starts with a conversation. Let's make your strategy actionable.</p>
+                
+                <a href="tel:+919324726587" class="btn-cta" style="font-size: 16px; padding: 14px 34px;">Call Us Now</a>
+
+                <div class="contact-info-pills">
+                    <a href="mailto:promankur@gmail.com" class="contact-pill">
+                        <span>📧</span> promankur@gmail.com
+                    </a>
+                    <a href="tel:+919324726587" class="contact-pill">
+                        <span>📱</span> +91 9324726587
+                    </a>
+                    <div class="contact-pill">
+                        <span>📍</span> Mumbai, India
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-wrapper">
+            <div>
+                &copy; 2025 Proman Associates LLP. All rights reserved.
+            </div>
+            <ul class="footer-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="/privacy-policy">Privacy Policy</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=61583331310254" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                <li><a href="https://x.com/promankur" target="_blank" rel="noopener noreferrer">X</a></li>
+                <li><a href="https://www.linkedin.com/company/109982861" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>

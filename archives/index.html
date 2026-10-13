@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni & Heritage Archives | Proman</title>
+    <meta name="description" content="Permanent archives for BITS Pilani 1970 Golden Jubilee and IIM Ahmedabad 1976 Alumni Portals, preserved by Ankur Gupta.">
+    <link rel="icon" type="image/png" href="/assets/proman_logo.png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #0A0A0A;
+            --bg-card: rgba(22, 22, 22, 0.7);
+            --bg-card-hover: rgba(32, 32, 32, 0.95);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --accent-blue: #1A6AFF;
+            --accent-gold: #DDAA55;
+            --text-primary: #FFFFFF;
+            --text-secondary: #A0A0A0;
+            --font-heading: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: radial-gradient(circle at 50% 20%, rgba(26, 106, 255, 0.1) 0%, rgba(10, 10, 10, 1) 70%);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            padding: 28px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #FFFFFF;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .brand-logo img {
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+        }
+
+        .btn-home {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 13.5px;
+            padding: 8px 18px;
+            border-radius: 30px;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s;
+        }
+
+        .btn-home:hover {
+            color: #FFFFFF;
+            border-color: var(--accent-blue);
+        }
+
+        main {
+            padding: 70px 0 90px;
+        }
+
+        .intro {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 56px;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 44px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .intro p {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        .archive-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .archive-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .archive-card:hover {
+            background: var(--bg-card-hover);
+            border-color: rgba(221, 170, 85, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+        }
+
+        .card-tag {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-gold);
+            margin-bottom: 12px;
+        }
+
+        .archive-card h2 {
+            font-family: var(--font-heading);
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .archive-card p {
+            color: var(--text-secondary);
+            font-size: 14.5px;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .stats-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12.5px;
+            color: #C5C5C5;
+            margin-bottom: 24px;
+        }
+
+        .btn-view {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #FFFFFF;
+            color: #0A0A0A;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 13.5px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            align-self: flex-start;
+        }
+
+        .btn-view:hover {
+            background: var(--accent-gold);
+            color: #0A0A0A;
+        }
+
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 32px 0;
+            text-align: center;
+            font-size: 13px;
+            color: #6E6E6E;
+        }
+
+        @media (max-width: 768px) {
+            .archive-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 34px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="/" class="brand-logo">
+                <img src="/assets/proman_logo.png" alt="Proman Logo">
+                <span>Proman Archives</span>
+            </a>
+            <a href="/" class="btn-home">&larr; Back to Proman 2.0</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="intro">
+                <span class="badge">HERITAGE &amp; COMMUNITY ARCHIVES</span>
+                <h1>Preserved Alumni Portals</h1>
+                <p>Curated and preserved by Ankur Gupta. These permanent digital archives document the memories, directories, yearbooks, and Golden Jubilee celebrations of two historic batches.</p>
+            </div>
+
+            <div class="archive-grid">
+                
+                <!-- BITS Gold 2020 -->
+                <div class="archive-card">
+                    <div>
+                        <div class="card-tag">BITS PILANI · CLASS OF 1970</div>
+                        <h2>BITS Gold 2020</h2>
+                        <p>The comprehensive digital portal celebrating the 50-Year Golden Jubilee of the BITS Pilani Class of 1970. Featuring the historic directory, campus layout, "Kahan Gaye Woh Yaar" tributes, photo albums, and exhibition of memorabilia.</p>
+                        <div class="stats-badge">
+                            <span>🏛️ 24 Sections · 236 Memorabilia Photos</span>
+                        </div>
+                    </div>
+                    <a href="/archives/bits70" class="btn-view">Explore BITS Gold 2020 &rarr;</a>
+                </div>
+
+                <!-- IIMA 76 -->
+                <div class="archive-card">
+                    <div>
+                        <div class="card-tag">IIM AHMEDABAD · CLASS OF 1976</div>
+                        <h2>IIMA 76</h2>
+                        <p>The alumni and reunion hub for the IIM Ahmedabad Batch of 1976. Preserving the digital yearbook, profile directories, virtual reunion sessions, Goa Pre-Ruby reunion memories, and batch rosters.</p>
+                        <div class="stats-badge">
+                            <span>🎓 10 Sections · Yearbook &amp; Reunion Logs</span>
+                        </div>
+                    </div>
+                    <a href="/archives/iima76" class="btn-view">Explore IIMA 76 &rarr;</a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            &copy; 2025 Proman Associates LLP · Curated by Ankur Gupta (BITS Pilani '70 · IIM Ahmedabad '76)
+        </div>
+    </footer>
+
+</body>
+</html>

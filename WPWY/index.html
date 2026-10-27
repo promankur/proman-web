@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Your Three</title>
+<meta name="description" content="Twenty-seven statements from the book Which Part Was Yours?, answered one at a time, show which three of the nine intelligences you rely on most. Takes a few minutes. Nothing you enter leaves the page.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Your Three">
+<meta property="og:description" content="Twenty-seven statements from the book Which Part Was Yours?, answered one at a time, show which three of the nine intelligences you rely on most. Takes a few minutes. Nothing you enter leaves the page.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,700&display=swap">
+<style>
+:root{
+  color-scheme:light; --paper:#FBFAF7; --ink:#231F20; --soft:#5E5A57; --rule:#DDD8D0; --card:#FFFFFF; --accent:#231F20; --mark:#C9C5BF; --over:#B3261E; --focus:#0F4B8E;
+  --serif:'Myriad Pro','Myriad Set Pro','Source Sans 3','Segoe UI',system-ui,sans-serif;
+  --sans:'Myriad Pro','Myriad Set Pro','Source Sans 3','Segoe UI',system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--paper:#1C1B1A;--ink:#EEEAE4;--soft:#A9A39B;--rule:#3A3835;--card:#262422;--accent:#EEEAE4;--mark:#5a5753;--over:#FF8A80;--focus:#7DB7FF;color-scheme:dark}
+}
+:root[data-theme="dark"]{--paper:#1C1B1A;--ink:#EEEAE4;--soft:#A9A39B;--rule:#3A3835;--card:#262422;--accent:#EEEAE4;--mark:#5a5753;--over:#FF8A80;--focus:#7DB7FF;color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;overflow-wrap:anywhere;background:var(--paper);color:var(--ink);font-family:var(--serif);font-weight:300;font-size:19px;line-height:1.5}
+main{max-width:640px;margin:0 auto;padding-block:28px 72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.mast{font:400 12px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--soft);margin-bottom:28px}
+h1{font:italic 700 34px/1.15 var(--serif);margin:0 0 14px}
+h2{font:italic 700 28px/1.25 var(--serif);margin:0 0 22px;outline:none}
+.deck h2{font:normal 300 22px/1.4 var(--sans)}
+h3{font:600 20px/1.25 var(--serif);color:var(--ink);margin:34px 0 12px}
+p{margin:0 0 14px}
+.soft{color:var(--soft)} .small{font:14px/1.45 var(--sans)}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.btn{font:600 16px/1 var(--sans);min-height:48px;padding:0 22px;border-radius:24px;border:1.5px solid var(--accent);background:transparent}
+.btn.primary{background:var(--accent);color:var(--paper)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.link{background:none;border:0;font:14px var(--sans);color:var(--soft);text-decoration:underline;padding:12px 4px;min-height:44px}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.tests{display:grid;gap:14px;margin:26px 0}
+.test{display:block;width:100%;text-align:left;background:var(--card);border:1.5px solid var(--rule);border-radius:14px;padding:18px 20px}
+.test:hover{border-color:var(--ink)}
+.test b{font:italic 700 24px/1.2 var(--serif);display:block}
+.test span{font:14px/1.4 var(--sans);color:var(--soft)}
+.bar{height:6px;background:var(--rule);border-radius:3px;margin:0 0 6px}
+.bar i{display:block;height:100%;background:var(--ink);border-radius:3px;transition:width .2s}
+.count{font:14px var(--sans);color:var(--soft);margin-bottom:26px;display:flex;justify-content:space-between}
+.stem{font:400 12px/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--soft);margin-bottom:10px}
+.prompt{font:italic 300 18px var(--serif);color:var(--soft);margin-bottom:8px}
+.choices{display:grid;gap:10px;margin:8px 0 22px}
+.choices.three{grid-template-columns:1fr 1fr 1fr}
+.choices.five{grid-template-columns:repeat(5,1fr)}
+.ch{min-height:60px;padding:8px 6px;border-radius:12px;border:1.5px solid var(--rule);background:var(--card);font:600 15px/1.2 var(--sans);text-align:center}
+.ch small{display:block;font:400 12px var(--sans);color:var(--soft);margin-top:4px}
+.ch:hover{border-color:var(--ink)}
+.ch[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.ch[aria-pressed=true] small{color:inherit}
+.list{list-style:none;margin:0 0 22px;padding:0}
+.list li{margin:0 0 10px}
+.pick{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;background:var(--card);border:1.5px solid var(--rule);border-radius:12px;padding:12px 14px;font-size:17px}
+.pick[aria-pressed=true]{border-color:var(--ink);box-shadow:inset 4px 0 0 var(--ink)}
+.pick .box{flex:none;width:22px;height:22px;border:1.5px solid var(--ink);border-radius:5px;margin-top:2px;text-align:center;font:600 14px/19px var(--sans)}
+.pick[aria-pressed=true] .box{background:var(--ink);color:var(--paper)}
+.status{font:600 14px var(--sans)} .status.over{color:var(--over)}
+/* results */
+.three-cards{display:grid;gap:12px;margin-bottom:8px}
+.big{border-radius:14px;padding:16px 18px 16px 22px;border-left:10px solid var(--c);background:var(--b);color:#231F20}
+.big b{font:italic 700 26px/1.2 var(--serif);display:block}
+.big em{font:12px var(--sans);font-style:normal;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+.big p{margin:8px 0 6px;font-size:17px} .big .rd{font:600 13px var(--sans)}
+.mini{display:grid;grid-template-columns:10px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--rule)}
+.mini i{width:10px;height:28px;border-radius:3px;background:var(--c)}
+.mini span{font:15px var(--sans)} .mini .mk{font:600 16px var(--sans);letter-spacing:.2em}
+.muted .mini i{background:var(--rule)}
+.hab{padding:12px 0;border-top:1px solid var(--rule)}
+.hab .t{display:flex;justify-content:space-between;font:15px var(--sans);margin-bottom:6px}
+.hab .tr{height:8px;background:var(--rule);border-radius:4px} .hab .tr i{display:block;height:100%;background:var(--ink);border-radius:4px}
+.note{border-top:1px solid var(--rule);margin-top:34px;padding-top:18px}
+@media (max-width:420px){.choices.five .ch{font-size:14px}.choices.five .ch small{display:none}}
+@media (hover:none){.ch small{display:none}}
+@media print{
+  body{background:#fff;color:#000;font-size:14pt}
+  .noprint{display:none!important} main{padding:0}
+  .big{break-inside:avoid;border:1px solid #999;border-left:10px solid var(--c)}
+}
+
+.strip{position:fixed;z-index:5;pointer-events:none;display:flex}
+.strip.top{top:env(safe-area-inset-top,0px);right:0;width:min(46vw,300px);height:10px}
+.strip.bot{bottom:env(safe-area-inset-bottom,0px);left:0;width:min(46vw,300px);height:10px}
+.strip i{flex:1}
+.bar{display:flex;gap:3px;height:10px;background:none!important}
+.bar b{flex:1;border-radius:2px;background:var(--t);position:relative;overflow:hidden}
+.bar b::after{content:"";position:absolute;inset:0;background:var(--s);transform-origin:left;transform:scaleX(var(--f,0));transition:transform .2s}
+.mast::after,h1::after{content:"";display:block;height:5px;width:64px;background:var(--mark);margin-top:10px;border-radius:3px}
+.mast::after{display:none}
+.deck{border-top:8px solid transparent;border-image:linear-gradient(90deg,#D8D6EF 0 11.1%,#F2E5F4 0 22.2%,#ECF9FE 0 33.3%,#F0F8D9 0 44.4%,#FFF7D7 0 55.5%,#FDE5D0 0 66.6%,#FCD8CB 0 77.7%,#FEF0F8 0 88.8%,#F7F2E9 0) 1}
+.hab .tr i{background:linear-gradient(90deg,#254AA5,#B365B9,#80D6F7,#99D420,#FCD205,#F36917,#ED1C24,#F799D1,#CBB485);background-size:var(--w,100%) 100%}
+.pick[aria-pressed=true]{border-color:var(--ink)}
+.mini .mk{color:var(--ink)}
+.mini.aside i{background:var(--c);opacity:.45}
+
+/* ---- visual pass: fan, hero, big statement, thumb-reach answers ---- */
+h1{font-size:clamp(34px,9.5vw,46px)}
+.hero{margin-bottom:10px}
+.fan{display:block;width:min(88vw,380px);height:auto;margin:0 0 20px -6px;overflow:visible}
+.fan.result{width:min(70vw,300px);margin-bottom:14px}
+.fan .pt{transform-origin:0 0}
+.fan.anim .pt{animation:bloom .75s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--k)*70ms)}
+@keyframes bloom{from{transform:scale(.15);opacity:0}to{transform:scale(1);opacity:1}}
+.lede{font-size:20px;line-height:1.45;max-width:30em}
+.tests{margin:22px 0 14px}
+.test.cta{background:var(--ink);border-color:var(--ink);color:var(--paper);padding:22px 22px 20px;border-radius:18px;min-height:96px}
+.test.cta b{font-size:30px}
+.test.cta span{color:inherit;opacity:.88;font-size:16px}
+.test.cta .st{display:inline-block;margin-top:10px;font-weight:600;text-decoration:underline}
+.test.alt{padding:14px 18px;opacity:.92}
+.test.alt b{font-size:20px}
+.qscreen{display:flex;flex-direction:column;min-height:calc(100dvh - 130px)}
+.count{margin-bottom:6px;align-items:center}
+.count b{font:700 22px var(--sans);color:var(--ink)}
+.count .nav{display:flex;gap:2px}
+.stmt{flex:1;display:flex;flex-direction:column;justify-content:center;padding:24px 0 20px}
+.stmt .prompt{margin-bottom:14px}
+.q{margin:0;outline:none;font:400 clamp(23px,6.4vw,30px)/1.32 var(--sans);text-wrap:balance}
+.choices.three{position:sticky;bottom:calc(env(safe-area-inset-bottom,0px) + 8px);margin:0;padding:14px 0 4px;background:linear-gradient(to top,var(--paper) 80%,transparent)}
+.choices.three .ch{min-height:96px;border-width:2px;border-radius:18px;font-size:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.ic{font:600 32px/1 var(--sans);font-style:normal}
+.big{padding:18px 20px 18px 24px;border-left-width:12px}
+.big b{font-size:31px}
+.big p{font-size:18px;line-height:1.4}
+.big .rd{display:inline-block;margin-top:6px;padding:9px 16px;border-radius:22px;background:#231F20;color:#FFFFFF;font:600 15px var(--sans)}
+.three-cards{gap:14px}
+@media (prefers-reduced-motion:reduce){.fan.anim .pt{animation:none}}
+
+/* ---- unboxed: rules, colour bars and type instead of boxes ---- */
+.test{background:none;border:0;border-top:1px solid var(--rule);border-radius:0;padding:18px 0}
+.test:hover{border-color:var(--ink)}
+.test.cta{color:var(--ink);padding:22px 0 20px;border-top:8px solid transparent;border-image:linear-gradient(90deg,#254AA5 0 11.1%,#B365B9 0 22.2%,#80D6F7 0 33.3%,#99D420 0 44.4%,#FCD205 0 55.5%,#F36917 0 66.6%,#ED1C24 0 77.7%,#F799D1 0 88.8%,#CBB485 0) 1}
+.test.cta b{font-size:32px}
+.test.cta b::after{content:"\00A0\2192"}
+.test.cta span{color:var(--soft);opacity:1}
+.test.alt{opacity:1;padding:16px 0}
+.ch{background:none;border:0;border-radius:0}
+.ch:hover{border-color:transparent}
+.choices.three,.choices.five{gap:0;border-top:1px solid var(--rule)}
+.choices.three .ch,.choices.five .ch{border:0;border-bottom:5px solid transparent;border-radius:0;color:var(--soft)}
+.choices.three .ch{min-height:100px}
+.choices.three .ch .ic{color:var(--ink)}
+.ch[aria-pressed=true],.choices.three .ch[aria-pressed=true],.choices.five .ch[aria-pressed=true]{background:none;color:var(--ink);border-bottom-color:var(--ink)}
+.pick,.pick[aria-pressed=true]{background:none;border:0;border-top:1px solid var(--rule);border-radius:0;box-shadow:none;padding:14px 2px}
+.pick[aria-pressed=true]{font-weight:600;border-top-color:var(--ink)}
+.pick .box{border-radius:50%}
+.btn,.btn.primary{background:none;color:var(--ink);border:0;border-bottom:3px solid var(--ink);border-radius:0;padding:0 2px;min-height:48px;font-weight:700}
+.big{background:none!important;color:var(--ink);border:0;border-top:10px solid var(--c);border-radius:0;padding:16px 0 6px}
+.big .rd{background:none;color:var(--ink);padding:0;border-radius:0;text-decoration:underline;font-size:16px}
+.test.cta{background:none;border-radius:0;min-height:0}
+.test.cta span{display:block;margin-top:6px}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="strip top" aria-hidden="true"></div><div class="strip bot" aria-hidden="true"></div>
+<main id="app" aria-live="polite"><noscript><p>This page needs JavaScript to run the exercise.</p></noscript></main>
+<script>
+// ---------- Content (the 27 statements are the book's own Your Three, final text, 27 Oct 2026) ----------
+// Names: the plain set chosen by the authors (24 Oct 2026), as on Illustrator artboard 2. Chapters 4-12, one per intelligence.
+const MI = [
+  null,
+  {n:"Knowing Yourself",        ch:4,  c:"#254AA5", b:"#D8D6EF", d:"You do your best thinking alone, and you usually know why you made the call you made, even when you'd rather not explain it to anyone else."},
+  {n:"Understanding Others",          ch:5,  c:"#B365B9", b:"#F2E5F4", d:"You can walk into a tense room and sense, before anyone has said anything, roughly what everyone in it is actually feeling."},
+  {n:"Using Words",                ch:6,  c:"#80D6F7", b:"#ECF9FE", d:"You're usually the one asked to write the email, the deck, or the difficult message, because the words come more easily to you than to most people around you."},
+  {n:"Making & Doing",                ch:7,  c:"#99D420", b:"#F0F8D9", d:"You think better moving than sitting still, and you'd rather build or demonstrate something than describe it."},
+  {n:"Reasoning",               ch:8,  c:"#FCD205", b:"#FFF7D7", d:"You're uneasy with a decision until you've seen the numbers behind it, and you can often spot the flaw in an argument before you can explain exactly why it's there."},
+  {n:"Seeing Connections",             ch:9,  c:"#F36917", b:"#FDE5D0", d:"You think in pictures and layouts before you think in words. A floor plan, a diagram, or a market map is something you can hold in your head and turn over."},
+  {n:"Rhythm & Timing",         ch:10, c:"#ED1C24", b:"#FCD8CB", d:"You notice rhythm, tone, and pattern in things other people just hear as noise, including, sometimes, in how a meeting or a negotiation is actually going."},
+  {n:"Spotting Differences",       ch:11, c:"#F799D1", b:"#FEF0F8", d:"You're the one who spots the pattern in the data, the market, or the room before anyone's named it. Sorting and classifying is something you do almost without trying."},
+  {n:"Asking Why", ch:12, c:"#CBB485", b:"#F7F2E9", d:"You're the person most likely to ask why you're doing something at all, not only how, and you mean it as a serious question, not a provocation."}
+];
+const THREE = [
+ [1,"I usually know why I made a decision, even when I would rather not explain it to anyone."],
+ [1,"When I am criticized, I can usually tell within a day whether the criticism was accurate, regardless of how I felt at the time."],
+ [1,"I have noticed at least one pattern in my own behavior that repeats, and I have changed something because of it."],
+ [2,"I can walk into a tense room and sense, before anyone speaks, roughly what people are feeling."],
+ [2,"In a meeting, I can usually tell who has already decided and who is waiting to see which way the room goes."],
+ [2,"I often hear that an objection is not really about the thing it claims to be about."],
+ [3,"People ask me to write the difficult email, the summary, or the message that has to land a certain way."],
+ [3,"I notice when a phrase is being used in a meeting to close down a question rather than to describe something."],
+ [3,"I am slow to name things, because I can feel that the first available word will commit us to an argument."],
+ [4,"I think better moving than sitting still."],
+ [4,"I would rather build a rough version of something than describe it."],
+ [4,"I can often tell that something is wrong with a machine, a process or a product by look, sound or feel, before I can say what."],
+ [5,"I am uneasy with a decision until I have seen the reasoning behind it set out step by step."],
+ [5,"I can often spot the flaw in an argument before I can explain exactly why it is there."],
+ [5,"When someone presents a number, my first instinct is to ask where it came from."],
+ [6,"I think in layouts, maps and diagrams before I think in words."],
+ [6,"When a plan is presented as a list, I find myself redrawing it as a picture to see what the list is hiding."],
+ [6,"I can look at a floor plan, an organization chart or a process map and see what will collide."],
+ [7,"I notice when the rhythm of something has changed, a week, a quarter, a negotiation, before I can say what changed."],
+ [7,"I know when to speak in a meeting by feeling where we are in it, not by watching faces."],
+ [7,"I care a great deal about the order in which things are presented, because the order changes what people feel at the end."],
+ [8,"I am the one who says \u201Cthese are not really the same thing\u201D when everyone else has put them in one category."],
+ [8,"I find the \u201COther\u201D or \u201CMiscellaneous\u201D category in any report more interesting than the main categories."],
+ [8,"I can tell two suppliers, two candidates or two proposals apart when the documents are identical."],
+ [9,"I am the person most likely to ask why we are doing something at all, and I mean it seriously."],
+ [9,"I am uncomfortable when a plan is approved without anyone saying what it is for."],
+ [9,"I can hold a question open in a room that wants it closed, and I have paid for this at least once."]
+].map(([mi,t],i)=>({id:i,mi,t}));
+
+const PARTS = ["How I think","How I check what is true","Understanding myself and others","Learning and bouncing back","Helping others and showing courage"];
+const HABITS = [
+ "When I face a difficult problem, I first explain it in my own words before searching online or asking AI for help.",
+ "I like to understand how something works instead of just memorising a formula or following steps.",
+ "I connect ideas from different interests, such as games, sports, music or science, to solve a problem.",
+ "When I get an answer from the internet, AI or another person, I check whether it makes sense instead of believing it straight away.",
+ "I know the difference between something I understand or have checked myself and something I have simply copied or repeated.",
+ "When new facts show that I am wrong, I accept them and change my mind.",
+ "When I feel stressed or upset, I notice my feelings and try to stay calm before making a decision.",
+ "When I am with friends, classmates or colleagues, I can often tell how they feel, even when they do not say it directly.",
+ "I prefer making, building or testing something myself rather than only reading about it or making a presentation.",
+ "When an old way of doing something no longer works, I am willing to try a new method or learn a new tool.",
+ "Even when I do not have all the information or instructions, I can make a sensible decision and take the next step.",
+ "When something goes wrong or I face rejection, I learn from it and try again instead of giving up for long.",
+ "I help classmates or colleagues and share what I know without expecting them to do something for me in return.",
+ "My teachers, friends or colleagues trust me enough to speak well of me even when I am not around.",
+ "Even when I feel nervous or awkward, I am willing to speak up, meet new people or have a difficult conversation face-to-face."
+].map((t,i)=>({id:i,part:Math.floor(i/3),t}));
+
+const TESTS = {
+  three:{title:"Your Three", blurb:"27 statements, one at a time. Sort each as like you, not like you, or not sure. Then it shows the three that win.",
+    items:()=>THREE, prompt:"On your best day at work, is this true of you?",
+    choices:[{v:-1,l:"Not like me"},{v:0,l:"Not sure"},{v:1,l:"Like me"}]},
+  habits:{title:"Five habits", blurb:"15 statements about how you think, check and cope when answers are free. Rate how often each is like you.",
+    items:()=>HABITS, prompt:"How often is this like you? Choose what you actually do, not what sounds best.",
+    choices:[{v:1,l:"Never"},{v:2,l:"Rarely"},{v:3,l:"Sometimes"},{v:4,l:"Often"},{v:5,l:"Always"}]}
+};
+
+// ---------- State ----------
+const KEY="wpwy-your-three-v2";
+let S={view:"home",test:null,order:[],i:0,ans:{three:{},habits:{}},keep:{most:null,least:null},tie:[]};
+try{const x=JSON.parse(localStorage.getItem(KEY));if(x&&x.ans)S=x}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+const $app=document.getElementById("app");
+document.querySelectorAll(".strip").forEach((el,k)=>el.innerHTML=MI.slice(1).map(m=>`<i style="background:${k?m.c:m.c}"></i>`).join(""));
+const segBar=(done,N)=>`<div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="${N}" aria-valuenow="${done}">${MI.slice(1).map((m,k)=>`<b style="--s:${m.c};--t:${m.b};--f:${Math.max(0,Math.min(1,(done/N)*9-k))}"></b>`).join("")}</div>`;
+const go=(v,extra)=>{Object.assign(S,{view:v},extra||{});save();render()};
+
+// Shuffle so that no two neighbouring statements belong to the same intelligence.
+function shuffled(items){
+  let a;
+  for(let tries=0;tries<200;tries++){
+    a=items.map(x=>x.id);
+    for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}
+    if(a.every((id,k)=>k==0||items[id].mi!==items[a[k-1]].mi))break;
+  }
+  return a;
+}
+// The nine petals of the cover: all lit on the home page, only your three lit on the result.
+function fan(lit,anim,cls){
+  const ang=[-80,-60,-40,-20,0,20,40,60,80],P="M0 -12C-15 -44 -12 -88 0 -108C12 -88 15 -44 0 -12Z";
+  const label=lit.length===9?"The nine petals, one for each intelligence":"Your three petals in colour, the other six in grey";
+  return `<svg class="fan${anim?" anim":""}${cls?" "+cls:""}" viewBox="-10 0 220 124" role="img" aria-label="${label}">`+
+    ang.map((a,k)=>{const m=k+1,on=lit.includes(m);return `<g transform="translate(100 118) rotate(${a})"><path class="pt" style="--k:${k};fill:${on?MI[m].c:"var(--rule)"}" d="${P}"/></g>`}).join("")+`</svg>`;
+}
+function start(test){
+  const items=TESTS[test].items();
+  S.test=test;S.ans[test]={};S.keep={most:null,least:null};S.tie=[];S.tieOk=false;
+  S.order=test==="three"?shuffled(items):items.map(x=>x.id);
+  go("q",{i:0});
+}
+
+// ---------- Views ----------
+function esc(s){return s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]))}
+function render(){
+  ({home,q:question,trim,result})[S.view]();
+  const f=$app.querySelector("[data-focus]");if(f)f.focus({preventScroll:true});
+  if(render.last!==S.view+S.i)window.scrollTo(0,0);render.last=S.view+S.i;
+}
+
+function home(){
+  const prog=t=>Object.keys(S.ans[t]).length, n={three:27,habits:15};
+  const resumable=t=>prog(t)>0&&prog(t)<n[t];
+  const state=t=>resumable(t)?`<span class="st">Resume: ${prog(t)} of ${n[t]} done</span>`:prog(t)==n[t]?`<span class="st">See your last result</span>`:"";
+  $app.innerHTML=`
+  <section class="hero">${fan([1,2,3,4,5,6,7,8,9],true)}
+  <div class="mast">Which Part Was Yours?</div>
+  <h1 data-focus tabindex="-1">Your IQ is one number.<br>Find your three.</h1>
+  <p class="lede">Twenty-seven statements about how you work on your best day. Say whether each is like you. Then see which three of the nine intelligences you rely on most.</p></section>
+  <div class="tests">
+    <button class="test cta" data-t="three"><b>Start Your Three</b><span>27 statements, a few minutes. Nothing you enter leaves this page.</span>${state("three")}</button>
+    <button class="test alt" data-t="habits"><b>${TESTS.habits.title}</b><span>${TESTS.habits.blurb}</span>${state("habits")}</button>
+  </div>
+  <p class="small soft">This is not a test and not a validated assessment. It maps to the nine intelligences in Chapters 4 to 12 of the book.</p>`;
+  $app.querySelectorAll(".test").forEach(b=>b.onclick=()=>{
+    const t=b.dataset.t;
+    if(prog(t)==n[t]){S.test=t;go("result")}
+    else if(resumable(t)&&S.test===t&&S.order.length){go("q")}
+    else start(t);
+  });
+}
+
+function question(){
+  const T=TESTS[S.test],items=T.items(),id=S.order[S.i],it=items[id],cur=S.ans[S.test][id],N=items.length,isThree=S.test==="three";
+  const stem=isThree?"":PARTS[it.part],icon={"-1":"\u2715","0":"\u25CB","1":"\u2713"};
+  $app.innerHTML=`
+  <div class="noprint qscreen">
+  <div>${segBar(S.i,N)}
+  <div class="count"><span><b>${S.i+1}</b> of ${N}</span><span class="nav"><button class="link" id="back" ${S.i?"":"hidden"}>\u2190 Previous</button><button class="link" id="home">Save and leave</button></span></div></div>
+  <div class="stmt deck">${stem?`<div class="stem">${stem}</div>`:""}<div class="prompt">${T.prompt}</div><h2 class="q" data-focus tabindex="-1">${esc(it.t)}</h2></div>
+  <div class="choices ${isThree?"three":"five"}" role="group" aria-label="Your answer">
+    ${T.choices.map((c,k)=>`<button class="ch" data-v="${c.v}" aria-pressed="${cur===c.v}">${isThree?`<i class="ic" aria-hidden="true">${icon[c.v]}</i>`:""}${c.l}<small>key ${k+1}</small></button>`).join("")}
+  </div>
+  </div>`;
+  let locked=false;
+  const pick=v=>{
+    if(locked)return;locked=true;S.ans[S.test][id]=v;save();
+    $app.querySelectorAll(".ch").forEach(b=>b.setAttribute("aria-pressed",b.dataset.v==v));
+    setTimeout(()=>{ if(S.i<N-1)go("q",{i:S.i+1}); else finish() },180);
+  };
+  $app.querySelectorAll(".ch").forEach(b=>b.onclick=()=>pick(+b.dataset.v));
+  $app.querySelector("#back").onclick=()=>go("q",{i:S.i-1});
+  $app.querySelector("#home").onclick=()=>go("home");
+  document.onkeydown=e=>{
+    if(S.view!=="q"||e.metaKey||e.ctrlKey||e.altKey)return;
+    const k=+e.key;if(k>=1&&k<=T.choices.length)pick(T.choices[k-1].v);
+    else if((e.key==="ArrowLeft"||e.key==="Backspace")&&S.i)go("q",{i:S.i-1});
+  };
+}
+
+function marked(sign){ // ids of statements with this mark
+  return THREE.filter(x=>S.ans.three[x.id]===sign).map(x=>x.id);
+}
+function finish(){
+  if(S.test==="three"&&(marked(1).length>9||marked(-1).length>9)){S.keep={most:null,least:null};go("trim")}
+  else go("result");
+}
+
+// Pass two: the book's "choose nine". Only shown if someone marked more than nine.
+function trim(){
+  const sec=(sign,key,title,sub)=>{
+    const ids=marked(sign);if(ids.length<=9)return "";
+    if(!S.keep[key])S.keep[key]=[];
+    return `<h3>${title} \u00B7 <span class="status ${S.keep[key].length>9?"over":""}" data-cnt="${key}"></span></h3><p class="soft">${sub}</p>
+    <ul class="list">${ids.map(id=>`<li><button class="pick" data-k="${key}" data-id="${id}" aria-pressed="${S.keep[key].includes(id)}"><span class="box">\u2713</span><span>${esc(THREE[id].t)}</span></button></li>`).join("")}</ul>`;
+  };
+  $app.innerHTML=`<div class="mast">Your Three \u00B7 second pass</div>
+  <h2 data-focus tabindex="-1">Narrow it to nine.</h2>
+  <p>Most people say \u201Clike me\u201D to more than nine. That is the problem with rating things one at a time: nearly everything sounds a little like you. Keep only the nine that matter most. The rest become \u201Cnot sure\u201D.</p>
+  ${sec(1,"most","Most true of you","Keep nine.")}${sec(-1,"least","Least true of you","Keep nine. These are the ones where you thought, no, that is someone else.")}
+  <div class="row"><button class="btn primary" id="go">Show my three</button></div>`;
+  const upd=()=>{
+    let ok=true;
+    $app.querySelectorAll("[data-cnt]").forEach(s=>{const n=S.keep[s.dataset.cnt].length;
+      s.textContent=`${n} of 9 kept`;s.classList.toggle("over",n!==9);if(n!==9)ok=false});
+    $app.querySelector("#go").disabled=!ok;
+  };
+  $app.querySelectorAll(".pick").forEach(b=>b.onclick=()=>{
+    const arr=S.keep[b.dataset.k],id=+b.dataset.id,at=arr.indexOf(id);
+    if(at<0)arr.push(id);else arr.splice(at,1);
+    b.setAttribute("aria-pressed",at<0);save();upd();
+  });
+  $app.querySelector("#go").onclick=()=>{
+    // anything dropped in the second pass becomes "not sure"
+    [["most",1],["least",-1]].forEach(([k,sign])=>{ if(S.keep[k]) marked(sign).forEach(id=>{ if(!S.keep[k].includes(id)) S.ans.three[id]=0 }) });
+    S.tie=[];S.tieOk=false;go("result");
+  };
+  upd();
+}
+
+function scoreThree(){
+  const rows=[];
+  for(let m=1;m<=9;m++){
+    const marks=THREE.filter(x=>x.mi===m).map(x=>S.ans.three[x.id]);
+    const net=marks.reduce((a,b)=>a+b,0),ticks=marks.filter(v=>v>0).length;
+    rows.push({m,marks,net,key:net*10+ticks});
+  }
+  rows.sort((a,b)=>b.key-a.key||a.m-b.m);
+  const k=rows[2].key,above=rows.filter(r=>r.key>k),tied=rows.filter(r=>r.key===k),need=3-above.length;
+  return {rows,above,tied,need,open:tied.length>need};
+}
+const glyph=v=>v>0?"\u2713":v<0?"\u2715":"\u25CB";
+
+function result(){
+  if(S.test==="habits")return resultHabits();
+  const sc=scoreThree();
+  let top;
+  if(sc.open){
+    const chosen=S.tie.filter(m=>sc.tied.some(r=>r.m===m));
+    if(chosen.length!==sc.need||!S.tieOk){
+      $app.innerHTML=`<div class="mast">Your Three</div><h2 data-focus tabindex="-1">A tie. Your call.</h2>
+      <p>${sc.tied.length} of your intelligences scored the same at the edge of your top three${sc.above.length?`, after ${sc.above.length} clear ${sc.above.length>1?"winners":"winner"}`:""}. Choose ${sc.need} that feel truer on your best day. The book's answer is yours, not mine.</p>
+      <ul class="list">${sc.tied.map(r=>`<li><button class="pick" data-m="${r.m}" aria-pressed="${chosen.includes(r.m)}"><span class="box">\u2713</span><span><b>${MI[r.m].n}</b><br>${MI[r.m].d}</span></button></li>`).join("")}</ul>
+      <div class="row"><button class="btn primary" id="go" disabled>Show my three</button><button class="link" id="home">Home</button></div>`;
+      $app.querySelector("#home").onclick=()=>go("home");
+      const go2=$app.querySelector("#go");
+      $app.querySelectorAll(".pick").forEach(b=>b.onclick=()=>{
+        const m=+b.dataset.m,at=S.tie.indexOf(m);
+        if(at>=0)S.tie.splice(at,1);else if(S.tie.filter(x=>sc.tied.some(r=>r.m===x)).length<sc.need)S.tie.push(m);
+        save();render();
+      });
+      go2.disabled=chosen.length!==sc.need;go2.onclick=()=>{S.tieOk=true;save();render()};
+      return;
+    }
+    top=[...sc.above.map(r=>r.m),...chosen];
+  } else top=sc.rows.slice(0,3).map(r=>r.m);
+  const rest=sc.rows.filter(r=>!top.includes(r.m));
+  const mid=rest.slice(0,3),low=rest.slice(3);
+  const row=(r,cls)=>`<div class="mini ${cls||''}" style="--c:${MI[r.m].c}"><i></i><span><b>${MI[r.m].n}</b></span><span class="mk" aria-label="${r.marks.map(v=>v>0?"like me":v<0?"not like me":"not sure").join(", ")}">${r.marks.map(glyph).join("")}</span></div>`;
+  const byM=m=>sc.rows.find(r=>r.m===m);
+
+  $app.innerHTML=`<div class="mast">Which Part Was Yours? \u00B7 Your Three</div>
+  ${fan(top,true,"result")}<h2 data-focus tabindex="-1">Your three, on your best day at work.</h2>
+  <div class="three-cards">${top.map(m=>`<div class="big" style="--c:${MI[m].c};--b:${MI[m].b}"><b>${MI[m].n}</b><p>${MI[m].d}</p><span class="rd">Read Chapter ${MI[m].ch}</span></div>`).join("")}</div>
+  <h3>Left open</h3>${mid.map(r=>row(r)).join("")}
+  <h3>Set aside</h3><div>${low.map(r=>row(r,'aside')).join("")}</div>
+  <p class="small soft" style="margin-top:12px">\u2713 like me \u00B7 \u25CB not sure \u00B7 \u2715 not like me. Three statements per intelligence, shown in the order of the book.</p>
+  <div class="note">
+    <p>Hold your three loosely. This surfaces an intuition you already had. It is not a validated assessment, not a score, and not a verdict on you. People are consistently wrong about which of their own capacities are dormant rather than absent, so read the three you set aside as well.</p>
+    <p>Then read the last section of each of your three chapters, <i>When the answer is free</i>.</p>
+    <p>Self-perception is fallible, so it is worth comparing your three with what two people who have seen you work in different settings would say, and doing this again in a few weeks with specific examples in mind.</p>
+  </div>
+  <div class="row noprint"><button class="btn primary" id="copy">Copy as text</button><button class="btn" id="again">Start again</button><button class="link" id="home">Home</button></div>`;
+  const txt=`Your Three (Which Part Was Yours?)\nMost true: ${top.map(m=>MI[m].n).join(", ")}\nLeft open: ${mid.map(r=>MI[r.m].n).join(", ")}\nSet aside: ${low.map(r=>MI[r.m].n).join(", ")}\n(Self-reflection, not a validated assessment.)`;
+  $app.querySelector("#copy").onclick=e=>{{const b=e.target;const fail=()=>{b.textContent="Select and copy below";let ta=document.getElementById("copyfallback");if(!ta){ta=document.createElement("textarea");ta.id="copyfallback";ta.readOnly=true;ta.rows=5;ta.setAttribute("aria-label","Your result as text");ta.style.cssText="width:100%;margin-top:12px;font:14px/1.4 var(--sans);color:var(--ink);background:var(--card);border:1.5px solid var(--rule);border-radius:10px;padding:10px";b.parentNode.after(ta)}ta.value=txt;ta.focus();ta.select()};try{navigator.clipboard.writeText(txt).then(()=>{b.textContent="Copied"},fail)}catch(err){fail()}}};
+  $app.querySelector("#again").onclick=()=>start("three");
+  $app.querySelector("#home").onclick=()=>go("home");
+}
+
+function resultHabits(){
+  const A=S.ans.habits;
+  const rows=PARTS.map((p,k)=>{const v=[0,1,2].map(j=>A[k*3+j]||0),avg=v.reduce((a,b)=>a+b,0)/3;return {p,avg}});
+  const label=a=>a>=4.5?"Always or almost":a>=3.5?"Often":a>=2.5?"Sometimes":a>=1.5?"Rarely":"Never";
+  $app.innerHTML=`<div class="mast">Which Part Was Yours? \u00B7 Five habits</div>
+  <h2 data-focus tabindex="-1">How you work when answers are free.</h2>
+  <p>Five areas, three statements each. There is no total and no grade. The shortest line is a place to look, not a flaw.</p>
+  ${rows.map(r=>`<div class="hab"><div class="t"><span>${r.p}</span><span class="soft">${label(r.avg)} \u00B7 ${r.avg.toFixed(1)}</span></div><div class="tr"><i style="width:${r.avg/5*100}%;--w:${500/r.avg*1}%"></i></div></div>`).join("")}
+  <div class="note"><p class="small soft">A habit mirror, not an intelligence score. Self-reported, so it shows how you see yourself. Compare it with how a colleague who knows your work would answer.</p></div>
+  <div class="row noprint"><button class="btn primary" id="again">Start again</button><button class="link" id="home">Home</button></div>`;
+  $app.querySelector("#again").onclick=()=>start("habits");
+  $app.querySelector("#home").onclick=()=>go("home");
+}
+
+if((S.view==="q"&&!S.order.length)||(S.view==="result"&&!S.test))S.view="home";
+render();
+</script>
+</body>
+</html>

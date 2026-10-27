@@ -1,9 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#1C1B1A">
 <title>Your Three</title>
 <meta name="description" content="Twenty-seven statements from the book Which Part Was Yours?, answered one at a time, show which three of the nine intelligences you rely on most. Takes a few minutes. Nothing you enter leaves the page.">
 <meta property="og:type" content="website">
@@ -12,14 +13,11 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300;1,700&display=swap">
 <style>
 :root{
-  color-scheme:light; --paper:#FBFAF7; --ink:#231F20; --soft:#5E5A57; --rule:#DDD8D0; --card:#FFFFFF; --accent:#231F20; --mark:#C9C5BF; --over:#B3261E; --focus:#0F4B8E;
+  --paper:#1C1B1A;--ink:#EEEAE4;--soft:#A9A39B;--rule:#3A3835;--card:#262422;--accent:#EEEAE4;--mark:#5a5753;--over:#FF8A80;--focus:#7DB7FF;color-scheme:dark;
   --serif:'Myriad Pro','Myriad Set Pro','Source Sans 3','Segoe UI',system-ui,sans-serif;
   --sans:'Myriad Pro','Myriad Set Pro','Source Sans 3','Segoe UI',system-ui,sans-serif;
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){--paper:#1C1B1A;--ink:#EEEAE4;--soft:#A9A39B;--rule:#3A3835;--card:#262422;--accent:#EEEAE4;--mark:#5a5753;--over:#FF8A80;--focus:#7DB7FF;color-scheme:dark}
-}
-:root[data-theme="dark"]{--paper:#1C1B1A;--ink:#EEEAE4;--soft:#A9A39B;--rule:#3A3835;--card:#262422;--accent:#EEEAE4;--mark:#5a5753;--over:#FF8A80;--focus:#7DB7FF;color-scheme:dark}
+:root[data-theme="light"]{--paper:#FBFAF7;--ink:#231F20;--soft:#5E5A57;--rule:#DDD8D0;--card:#FFFFFF;--accent:#231F20;--mark:#C9C5BF;--over:#B3261E;--focus:#0F4B8E;color-scheme:light}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;overflow-wrap:anywhere;background:var(--paper);color:var(--ink);font-family:var(--serif);font-weight:300;font-size:19px;line-height:1.5}
@@ -156,13 +154,23 @@ h1{font-size:clamp(34px,9.5vw,46px)}
 .big .rd{background:none;color:var(--ink);padding:0;border-radius:0;text-decoration:underline;font-size:16px}
 .test.cta{background:none;border-radius:0;min-height:0}
 .test.cta span{display:block;margin-top:6px}
+
+.toprow{display:flex;justify-content:flex-end;align-items:center;margin:-10px 0 12px}
+.theme-toggle{font:600 14px var(--sans);color:var(--soft);padding:10px 2px}
+.theme-toggle:hover{color:var(--ink)}
 [hidden]{display:none!important}
 </style>
 </head>
 <body>
 <div class="strip top" aria-hidden="true"></div><div class="strip bot" aria-hidden="true"></div>
 <main id="app" aria-live="polite"><noscript><p>This page needs JavaScript to run the exercise.</p></noscript></main>
-<script>
+<script>const THEME_KEY="wpwy-theme";
+function theme(){try{return localStorage.getItem(THEME_KEY)==="light"?"light":"dark"}catch(e){return "dark"}}
+function applyTheme(t){document.documentElement.setAttribute("data-theme",t);document.querySelectorAll(".theme-toggle").forEach(b=>{b.textContent=t==="light"?"Dark theme":"Light theme"})}
+function themeBtn(){return `<button class="link theme-toggle" type="button">${theme()==="light"?"Dark theme":"Light theme"}</button>`}
+document.addEventListener("click",e=>{if(e.target.closest&&e.target.closest(".theme-toggle")){const n=theme()==="light"?"dark":"light";try{localStorage.setItem(THEME_KEY,n)}catch(x){}applyTheme(n)}});
+applyTheme(theme());
+
 // ---------- Content (the 27 statements are the book's own Your Three, final text, 27 Oct 2026) ----------
 // Names: the plain set chosen by the authors (24 Oct 2026), as on Illustrator artboard 2. Chapters 4-12, one per intelligence.
 const MI = [
@@ -282,7 +290,7 @@ function home(){
   const resumable=t=>prog(t)>0&&prog(t)<n[t];
   const state=t=>resumable(t)?`<span class="st">Resume: ${prog(t)} of ${n[t]} done</span>`:prog(t)==n[t]?`<span class="st">See your last result</span>`:"";
   $app.innerHTML=`
-  <section class="hero">${fan([1,2,3,4,5,6,7,8,9],true)}
+  <section class="hero"><div class="toprow">${themeBtn()}</div>${fan([1,2,3,4,5,6,7,8,9],true)}
   <div class="mast">Which Part Was Yours?</div>
   <h1 data-focus tabindex="-1">Your IQ is one number.<br>Find your three.</h1>
   <p class="lede">Twenty-seven statements about how you work on your best day. Say whether each is like you. Then see which three of the nine intelligences you rely on most.</p></section>
@@ -408,7 +416,7 @@ function result(){
   const row=(r,cls)=>`<div class="mini ${cls||''}" style="--c:${MI[r.m].c}"><i></i><span><b>${MI[r.m].n}</b></span><span class="mk" aria-label="${r.marks.map(v=>v>0?"like me":v<0?"not like me":"not sure").join(", ")}">${r.marks.map(glyph).join("")}</span></div>`;
   const byM=m=>sc.rows.find(r=>r.m===m);
 
-  $app.innerHTML=`<div class="mast">Which Part Was Yours? \u00B7 Your Three</div>
+  $app.innerHTML=`<div class="toprow">${themeBtn()}</div><div class="mast">Which Part Was Yours? \u00B7 Your Three</div>
   ${fan(top,true,"result")}<h2 data-focus tabindex="-1">Your three, on your best day at work.</h2>
   <div class="three-cards">${top.map(m=>`<div class="big" style="--c:${MI[m].c};--b:${MI[m].b}"><b>${MI[m].n}</b><p>${MI[m].d}</p><span class="rd">Read Chapter ${MI[m].ch}</span></div>`).join("")}</div>
   <h3>Left open</h3>${mid.map(r=>row(r)).join("")}
